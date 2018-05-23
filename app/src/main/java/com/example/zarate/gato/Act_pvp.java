@@ -4,11 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Act_pvp extends AppCompatActivity implements View.OnClickListener {
     private Button[][] buttons = new Button[3][3];
+    private ImageView[][] imgv = new ImageView[3][3];
     private boolean player1 =true;
     private int roundCount;
     private  int player1Points;
@@ -30,6 +32,8 @@ public class Act_pvp extends AppCompatActivity implements View.OnClickListener {
                 buttons[i][j] = findViewById(resId);
                 buttons[i][j].setOnClickListener(this);
 
+                String ImageID = "imgV_ID" +i+j;
+                int resimgID = getResources().getIdentifier(ImageID, "id",getPackageName());
             }
         }
         Button btnreset= findViewById(R.id.btn_reset);
